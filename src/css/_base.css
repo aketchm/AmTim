@@ -1,0 +1,123 @@
+/* ==========================================================================
+   Base styles
+   ========================================================================== */
+
+html {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+body {
+    background: #222 url('../img/bg.png') repeat top center;
+    -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+        -webkit-text-size-adjust: 100%;
+    color: #6c6c6c;
+}
+
+a {
+    color: #468dcc;
+    text-decoration: none;
+    -webkit-transition: all ease-in 0.35s;
+    -moz-transition: all ease-in 0.35s;
+    -o-transition: all ease-in 0.35s;
+    -ms-transition: all ease-in 0.35s;
+    transition: all ease-in 0.35s;
+    outline: 0;
+}
+
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+    color: #3d7691;
+}
+
+/*
+ * Remove text-shadow in selection highlight.
+ * These selection declarations have to be separate.
+ */
+
+::-moz-selection {
+    background: #fea6a7;
+    opacity: 0.7;
+    text-shadow: none;
+}
+
+::selection {
+    background: #fea6a7;
+    opacity: 0.7;
+    text-shadow: none;
+}
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+
+img {
+    vertical-align: middle;
+}
+
+/* Typography
+   ========================================================================== */
+h1,h2,h3,h4,h5,h6, .lato{font-family: 'Lato Light', sans-serif; font-weight: 100; text-transform: uppercase;}
+h1 {
+    margin: 0 0.5em 0.75em;
+    font-size: 2.9em;
+    line-height: 1.2em;
+    letter-spacing:-2px;
+}
+
+h2 {
+    margin: 1.5em 0 1em;
+    font-size: 2em;
+}
+
+h3 {
+    margin: 0 0 0.5em;
+    color: #555;
+    font-size: 1.25em;
+}
+
+p {
+    margin: 0 0 2em;
+}
+
+    p img { margin: .1em; }
+    .lead { font-size: 21px; line-height: 27px; color: #777;  }
+
+    em { font-style: italic; }
+    strong { font-weight: bold;}
+    small { font-size: 80%; }
+
+/*  Blockquotes  */
+    blockquote, blockquote p { font-size: 17px; line-height: 24px; color: #777; font-style: italic; }
+    blockquote { margin: 0 0 20px; padding: 9px 20px 0 19px; border-left: 1px solid #ddd; }
+    blockquote cite { display: block; font-size: 12px; color: #555; }
+    blockquote cite:before { content: "\2014 \0020"; }
+    blockquote cite a, blockquote cite a:visited, blockquote cite a:visited { color: #555; }
+
+    hr { border: solid #ddd; border-width: 1px 0 0; clear: both; margin: 10px 0 30px; height: 0; }   
+    
+/*Images */
+    .responsive {
+        max-width: 100%;
+        height: auto; }
+
+/*Margins*/
+
+    .add-top{margin-top: 20px !important;}
+    .half-top{margin-top:10px;}
+    .remove-top{margin-top:0 !important;}
+    .remove-bottom{margin-bottom: 0 !important;}
+    .half-bottom{margin-bottom:10px !important;}
+
+/*Misc*/
+.hide{display:none !important;}
+.openSans{font-family:'Open Sans',Arial, helvetica, sans-serif;}
+.center{
+    text-align:center !important;
+    }
+
+

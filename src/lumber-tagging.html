@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>Lumber Tagging - American Timber and Steel</title>
+        <meta name="description" content="Lumber Tagging Application">
+        <meta name="author" content="Anthony Ketchmark - Monolith Multimedia">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/main.css">
+        <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,300,400italic,400,600italic,600,700italic,700,800italic,800" rel="stylesheet" type="text/css">
+        
+        <!--[if lt IE 9]>
+            <script src="js/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+    <!-- PREVIOUS SCREEN ARROW HIDDEN -->
+    <a href="#" id="prev" class="arrow"></a>
+
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->      
+        <div id="header" class="container row">
+            <figure class="five columns add-top">
+                <img id="logo" class="responsive" src="img/logo.png" alt="American Timber and Steel">
+            </figure>
+            <section class="eleven columns">
+                <header class="add-top">
+                    <h1 id="title" class="redFont remove-bottom">Lumber Tagging System</h1>
+                    <h2 class="add-top blueFont remove-bottom">Product Code: 0356601-102-95</h2>
+                    <p class="lead half-top remove-bottom"><em>Click or tap a field to edit it</em></p>
+                </header>
+            </section> 
+        </div> 
+              
+        <div id="lumber" class="container">             
+            <form action="#" method="POST" id="lumber-tagging">              
+                <div class="sixteen columns field row">
+                    <label for="product_description">Product Description:</label>
+                    <input size="50" type="text" placeholder="Please Enter A Product Description" name="product_description" id="product_description" required
+                    value="3.5&quot; x 6.6&apos; SYP Round Post - Turned">                    
+                </div>
+                <div class="row">
+                    <div class="one-third column field">
+                        <label for="qty">Bundle Qty:</label>
+                        <input type="number" placeholder="1-266pcs" name="qty" id="qty" min="1" max="266" value=""><span>PCS</span>                    
+                    </div>
+
+                    <div class="one-third column field">
+                        <label for="tags">Tags to Print:</label>
+                        <input type="number" placeholder="1-75pcs" name="tags" id="tags" required min="1" max="75" value="" onblur="this.checkValidity();"><span>PCS</span>                    
+                    </div>
+
+                    <div id="shifts" class="one-third column field">
+                        <h2 class="remove-top remove-bottom">Production Shift:</h2>
+                        <div class="switch">
+                            <label for="first" class="trigger blue">1st</label>
+                            <label for="second" class="trigger">2nd</label>
+                        </div>
+                        <input type="radio" name="shift" id="first" value="1st">
+                        <input type="radio" name="shift" id="second" value="2nd">
+                    </div> 
+                </div>
+                <div class="sixteen columns add-top field row">
+                    <label for="comments">Comments</label>
+                    <textarea id="comments" name="comments" placeholder="Enter a comment"></textarea>
+                </div>
+                <div class="offset-by-twelve four columns field">
+                    <input id="submit" class="box blue remove-top" type="submit">
+                </div>                                
+            </form>
+        <aside id="loading" class="sixteen columns">
+            <i class="fa fa-spinner fa-spin fa-2x blueFont"></i> Auto Saving&hellip;           
+        </aside>               
+        </div>
+        <div id="results" class="container row">
+            <div class="sixteen columns">
+               <p>
+                <strong>Product Description:</strong> <span id="product-description-results"></span>
+                </p>
+
+                <p>
+                    <strong>Bundle Qty:</strong> <span id="qty-results"></span>
+                </p>
+
+                <p>
+                    <strong>Tags to Print:</strong> <span id="tags-results"></span>
+                </p>    
+
+                <p>
+                    <strong>Production Shift:</strong> <span id="shift-results"></span>
+                </p>
+
+                <p>
+                    <strong>Comments:</strong> <br/>
+                    <span id="comment-results"></span>
+                </p> 
+            </div>
+            <div class="offset-by-five four columns">
+                <a href="javascript:window.print() " class="box blue">Print</a>              
+            </div>            
+        </div> 
+
+        <script src="js/jquery.js"></script>
+        <script src="js/easing.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/sisyphus.js"></script>
+        <script src="js/cookie.js"></script> 
+        <script src="js/typeahead.js"></script>       
+        <script>
+            $(function() { 
+                $("#lumber-tagging").sisyphus();
+            });
+
+            $('#product_description').typeahead({
+                name: 'descriptions',
+                local: [
+                '3.5\" x 6.6\' SYP ROUND POST - TURNED',
+                '4\" x 6\' SYP ROUND POST - TURNED',
+                '4\" x 6.6\' SYP ROUND POST - TURNED',
+                '4\" x 7\' SYP ROUND POST - TURNED',
+                '4\" x 7.6\' SYP ROUND POST - TURNED',
+                '4\" x 8\' SYP ROUND POST - TURNED',
+                '4\" x 10\' SYP ROUND POST - TURNED',
+                '5\" x 6\' SYP ROUND POST - TURNED',
+                '5\" x 6.6\' SYP ROUND POST - TURNED',
+                '5\" x 7\' SYP ROUND POST - TURNED',
+                '5\" x 7.6\' SYP ROUND POST - TURNED',
+                '5\" x 8\' SYP ROUND POST - TURNED',
+                '5\" x 8\'6\" SYP ROUND POST - TURNED',
+                '5\" x 9\' SYP ROUND POST - TURNED',
+                '5\" x 10\' SYP ROUND POST - TURNED',
+                '5\" x 12\' SYP ROUND POST - TURNED',
+                '6\" x 6\' SYP ROUND POST - TURNED',
+                '6\" x 7\' SYP ROUND POST - TURNED',
+                '6\" x 7.6\' SYP PRIEFERT BLANK',
+                '6\" x 8\' SYP ROUND POST - TURNED',
+                '6\" x 9\' SYP ROUND POST - TURNED',
+                '6\" x 10\' SYP ROUND POST - TURNED',
+                '6\" x 12\' SYP ROUND POST - TURNED',
+                '7\" x 8\' SYP ROUND POST - TURNED',
+                '7\" x 10\' SYP Round Post - TURNED',
+                '8\" x 10\' SYP Round Post-Turned',
+                '8\" x 8\' SYP Round Post-Turned',
+                '5\" x 7.6\' SYP FACED POST - TURNED',
+                '5\" x 8\' SYP FACED POST - TURNED',
+                '6\" x 7.6\' SYP FACED POST - TURNED',
+                '6\" x 8\' SYP FACED POST - TURNED',
+                'OH 7-9\" X 6\' SYP TURNED GUARD RAIL POST',
+                'OH 7\" X7\' 6\' SYP TURNED GUARD RAIL POST',
+                '7\" x 9\' SYP ROUND POST - TURNED',
+                'TX 7\" X 6\'3\" BLANK',
+                'TX 7\" X 6\'3\" NON-SPEC',
+                'TX 7 X 7\'3\" BLANK'
+
+                ]
+            });
+        </script>
+    </body>
+</html>
